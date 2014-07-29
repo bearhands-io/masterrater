@@ -1,0 +1,9 @@
+{
+	"name": "universal-remote",
+	"version": "0.0.0",
+	"author": "Brad Bowie",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/broan/universal-remote"
+	}
+}
