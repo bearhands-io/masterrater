@@ -1,4 +1,3 @@
-universal-remote
+Shipping
 ================
-
-A web-based universal remote controller for home automation
+Hackathoning, here. Good stuff
