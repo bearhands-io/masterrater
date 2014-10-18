@@ -2,7 +2,13 @@ $(document).ready(function(){
 	$('#submitButton').click(onSubmitButtonClick);
 
 	function onSubmitButtonClick(e) {
-		$.post('/rates', null, onSuccessfulSubmitResults, 'application/json');
+
+
+  		var posting = $.post('/rates', { /* form */ } );
+  		posting.done(function(data) {
+  			console.log(data);
+  			$('#results').html(data);
+  		});
 	}
 
 	function onSuccessfulSubmitResults(data, status) {
