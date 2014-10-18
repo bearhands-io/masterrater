@@ -1,12 +1,14 @@
 {
-	"name": "universal-remote",
-	"version": "0.0.0",
-	"author": "Brad Bowie",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/broan/universal-remote"
+	"name"         : "universal-remote",
+	"version"      : "0.0.0",
+	"author"       : "Brad Bowie and Sean Bowie"
+	"repository"   : {
+		"type" : "git",
+		"url"  : "https://github.com/broan/shipping-nodejs"
 	},
-	"dependencies": {
-		"express": "3.x"
+	"dependencies" : {
+		"express"     : "3.x",
+		"ejs"         : "1.0.0",
+		"body-parser" : "1.0.1"
 	}
 }
