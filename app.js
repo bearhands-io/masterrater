@@ -13,7 +13,7 @@ var port = 3000;
 ////////////////////////////////////////////
 var app = express();
 
-app.use(express.static(__dirname + '/public')); // so we can access style sheets and .js files
+app.use(express.static(__dirname + '/public')); // so we can access static resources
 
 app.set('port', port);
 app.set('view engine', 'ejs'); // to load .ejs files
