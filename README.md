@@ -7,25 +7,25 @@ Presentation Layer
 ------------------------------------------------
 
 view
-	- html/js/css
+- html/js/css
 
 model
-	- from zips (hardcoded warehouse locations)
-	- to zip
-	- weight
-	- order amount
-	- shipping rates (sorted cheapest to most expensive)
-		- distance
-		- duration
-		- cost
-		- service name
+- from zips (hardcoded warehouse locations)
+- to zip
+- weight
+- order amount
+- shipping rates (sorted cheapest to most expensive)
+	- distance
+	- duration
+	- cost
+	- service name
 
 controller
-	- validate
-	- compile rates to multiple destinations
-		- get distances
-		- get rates for distances
-		- populate and sort rates in model (cheapest at top)
+- validate
+- compile rates to multiple destinations
+	- get distances
+	- get rates for distances
+	- populate and sort rates in model (cheapest at top)
 
 ------------------------------------------------
 Business Layer (services)
@@ -63,17 +63,17 @@ Domain Objects (data structures)
 ------------------------------------------------
 
 Trip/Distance
-	- id
-	- from zip
-	- to zip
-	- distance
-	- duration
+- id
+- from zip
+- to zip
+- distance
+- duration
 
 ShippingRate
-	- DistanceId
-	- scac (carrier code)
-	- fuel surcharge
+- DistanceId
+- scac (carrier code)
+- fuel surcharge
 
 Carrier
-	- id
-	- scac (carrier code)
+- id
+- scac (carrier code)
