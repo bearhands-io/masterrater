@@ -1,10 +1,10 @@
 {
-	"name"         : "universal-remote",
+	"name"         : "shipping-nodejs",
 	"version"      : "0.0.0",
-	"author"       : "Brad Bowie and Sean Bowie"
+	"author"       : "Brad Bowie and Sean Bowie",
 	"repository"   : {
 		"type" : "git",
-		"url"  : "https://github.com/broan/shipping-nodejs"
+		"url"  : "https://github.com/brad-bowie/shipping-nodejs"
 	},
 	"dependencies" : {
 		"express"     : "3.x",
