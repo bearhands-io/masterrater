@@ -1,5 +1,6 @@
 var express = require('express'),
-    http = require('http');
+    http = require('http')
+    bodyParser = require('body-parser');
 
 
 
@@ -13,6 +14,7 @@ var port = 3000;
 ////////////////////////////////////////////
 var app = express();
 
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public')); // so we can access static resources
 
 app.set('port', port);
