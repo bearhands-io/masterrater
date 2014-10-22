@@ -7,7 +7,6 @@ $(document).ready(function(){
 			'weight': $('#weight').val()
 		}
 
-
 		$.ajax({
 			type: 'POST',
 			url: '/rates',
@@ -22,7 +21,7 @@ $(document).ready(function(){
   				$('#results').text('Unable to reach server. Please try again later');
 			},
 			complete: function(response, status) {
-
+				// complete logic?
 			}
 		});
 	}
