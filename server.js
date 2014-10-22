@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 // configs
 ////////////////////////////////////////////
 var config = require('./lib/config');
-var port = config.port;
+var port = config.port || 8080;
 
 ////////////////////////////////////////////
 // create server
