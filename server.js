@@ -1,13 +1,12 @@
-var express = require('express'),
-    http = require('http')
-    bodyParser = require('body-parser');
-
-
+var express = require('express');
+var http = require('http');
+var bodyParser = require('body-parser');
 
 ////////////////////////////////////////////
 // configs
 ////////////////////////////////////////////
-var port = 3000;
+var config = require('./lib/config');
+var port = config.port;
 
 ////////////////////////////////////////////
 // create server
