@@ -2,78 +2,42 @@ Shipping
 ================
 Hackathoning, here. Good stuff
 
+Overview
+- express app engine
+- ejs for templating
+- CTS and Google apis
+- static js/css for in-page logic/presentation
+
 ------------------------------------------------
 Presentation Layer
 ------------------------------------------------
 
-view
-- html/js/css
-
-model
-- from zips (hardcoded warehouse locations)
-- to zip
-- weight
-- order amount
-- shipping rates (sorted cheapest to most expensive)
-	- distance
-	- duration
-	- cost
-	- service name
-
-controller
-- validate
-- compile rates to multiple destinations
-	- get distances
-	- get rates for distances
-	- populate and sort rates in model (cheapest at top)
+RateController
+- GET
+	- get form view
+- POST
+	- validate
+	- get rates for toZip/weight combo, assume presorted with cheapest at op
+	- hard-coded fromZip list
 
 ------------------------------------------------
 Business Layer (services)
 ------------------------------------------------
 
-Distance Service
-- getDistance(fromZip, toZip)
-	- get from cache?
-		- return from results cache
-	- else
-		- google services
-		- commit to cache
-		- return results
-- cacheDistance(fromZip, toZip, distance, duration)
-
-Rate service
-- getRates(from zip, to zip, distance)
-	- CTS ratings
-	- SouthEastern ratings (custom)
-
-------------------------------------------------
-Data Access Layer 
-------------------------------------------------
-
-DistanceDao
-- saveDistance(fromZip, toZip, distance, duration)
-- getDistance(fromZip, toZip)
-
-RatesDao
-- saveRate(distanceRid, cost)
-- getRate(distanceRid)
+RateService
+- getRates(fromZips, toZip, weight)
+	- calculate and aggregate all the shipping rate combinations
+	- sort results from cheapest to most expensive
+	- currently using CTS and custom SouthEastern rating algorithms
 
 ------------------------------------------------
 Domain Objects (data structures)
 ------------------------------------------------
 
-Trip/Distance
-- id
-- from zip
-- to zip
+Rate
+- fromZip
+- toZip
+- weight
 - distance
-- duration
-
-ShippingRate
-- DistanceId
-- scac (carrier code)
-- fuel surcharge
-
-Carrier
-- id
-- scac (carrier code)
+- carrier
+- cost
