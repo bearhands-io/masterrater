@@ -4,7 +4,8 @@ $(document).ready(function(){
 	function onSubmitButtonClick(e) {
 		var form = {
 			'toZip': $('#toZip').val(),
-			'weight': $('#weight').val()
+			'weight': $('#weight').val(),
+			'orderprice': $('#orderprice').val()
 		}
 
 		$.ajax({

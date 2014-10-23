@@ -1,7 +1,8 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
+    background: url(http://upload.wikimedia.org/wikipedia/commons/f/f5/F1_light_blue_flag.svg);
 }
 
-span#cheapestOption {
+#carrierrate.green{
 	color: green;
 }
