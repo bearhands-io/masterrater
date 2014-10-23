@@ -8,6 +8,8 @@ $(document).ready(function(){
 			'orderprice': $('#orderprice').val()
 		}
 
+		$('#submitButton').prop('disabled', true);
+
 		$.ajax({
 			type: 'POST',
 			url: '/rates',
@@ -22,7 +24,7 @@ $(document).ready(function(){
   				$('#results').text('Unable to reach server. Please try again later');
 			},
 			complete: function(response, status) {
-				// complete logic?
+				$('#submitButton').prop('disabled', false);
 			}
 		});
 	}
