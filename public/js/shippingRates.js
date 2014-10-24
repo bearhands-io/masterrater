@@ -7,15 +7,16 @@ $(document).ready(function(){
 		          'weight=' + $('#weight').val() + '&' +
 		          'orderprice=' + $('#orderprice').val()
 
-		$('#submitButton').prop('disabled', true);
-
 		$.ajax({
 			type: 'GET',
 			url: URL,
-			success: function(response){
+			beforeSend: function() {
+				$('#submitButton').prop('disabled', true);
+			},
+			success: function(response) {
   				$('#results').html(response);
 			},
-			error: function(response){
+			error: function(response) {
 				console.log('error getting rates: ' + JSON.stringify(response));
   				$('#results').text('Server exception encountered. Please try again later');
 			},
