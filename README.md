@@ -7,21 +7,23 @@ Overview
 - ejs for templating
 - CTS and Google apis
 - static js/css for in-page logic/presentation
+	- jQuery
+	- twitter bootstrap
 
 ------------------------------------------------
 Presentation Layer
 ------------------------------------------------
 
 RateController
-- GET
-	- get form view
-- POST
-	- validate
-	- get rates for toZip/weight combo, assume presorted with cheapest at op
-	- hard-coded fromZip list
+- getForm (GET)
+	- render form view page
+- getShippingRates (GET)
+	- validate inputs
+	- assumes hard-coded fromZip list
+	- get rates for toZip/fromZip/weight combo, assume results are presorted with cheapest at op
 
 ------------------------------------------------
-Business Layer (services)
+Business Layer
 ------------------------------------------------
 
 RateService
@@ -30,8 +32,10 @@ RateService
 	- sort results from cheapest to most expensive
 	- currently using CTS and custom SouthEastern rating algorithms
 
+TrackingService
+
 ------------------------------------------------
-Domain Objects (data structures)
+Objects
 ------------------------------------------------
 
 Rate
