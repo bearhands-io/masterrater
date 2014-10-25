@@ -33,6 +33,8 @@ RateService
 	- currently using CTS and custom SouthEastern rating algorithms
 
 TrackingService
+- trackShipment(carrier, shipmentId)
+	- integrates with multiple carriers for tracking
 
 ------------------------------------------------
 Objects
