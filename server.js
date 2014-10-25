@@ -16,6 +16,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public')); // so we can access static resources
 
+app.set('config', config);
 app.set('port', port);
 app.set('view engine', 'ejs'); // to load .ejs files
 app.set('views', __dirname + '/lib/mvc/views'); // where .ejs files are located

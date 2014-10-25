@@ -1,6 +1,5 @@
 Shipping
 ================
-Hackathoning, here. Good stuff
 
 Overview
 - express app engine
