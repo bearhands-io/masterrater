@@ -35,6 +35,11 @@ RateService
 TrackingService
 - trackShipment(carrier, shipmentId)
 	- integrates with multiple carriers for tracking
+		- Wilson Trucking
+		- AAA Cooper Transport
+		- Averitt
+		- UPS
+		- R&L
 
 ------------------------------------------------
 Objects
