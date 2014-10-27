@@ -12,6 +12,7 @@ $(document).ready(function(){
 			url: URL,
 			beforeSend: function() {
 				$('#submitButton').prop('disabled', true);
+  				$('#results').text('Please wait...');
 			},
 			success: function(response) {
   				$('#results').html(response);
