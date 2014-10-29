@@ -10,5 +10,6 @@
 		"wilson_trucking" : {
 			"api_key" : ""
 		}
-	}
+	},
+	"fromZips" : [30071, 72114, 70814, 33619]
 }
