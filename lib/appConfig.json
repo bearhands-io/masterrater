@@ -1,0 +1,5 @@
+{
+	"port" : "80",
+	"staticResourcesDirectory" : "/public",
+	"viewsDirectory" : "/lib/mvc/views"
+}

@@ -5,21 +5,23 @@ var bodyParser = require('body-parser');
 ////////////////////////////////////////////
 // configs
 ////////////////////////////////////////////
-var config = require('./lib/config');
+var config = require('./lib/appConfig');
 var port = config.port || 8080;
+var staticResourcesDir = config.staticResourcesDirectory || '/public'; // css, js for page logic, images, etc...
+var viewsDirectory = config.viewsDirectory || '/views'; // .ejs files
 
 ////////////////////////////////////////////
 // create server
 ////////////////////////////////////////////
 var app = express();
 
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public')); // so we can access static resources
-
-app.set('config', config);
 app.set('port', port);
 app.set('view engine', 'ejs'); // to load .ejs files
-app.set('views', __dirname + '/lib/mvc/views'); // where .ejs files are located
+app.set('views', __dirname + viewsDirectory); // where .ejs files are located
+app.set('config', require('./lib/companyConfig.json'));
+
+app.use(bodyParser.json());
+app.use(express.static(__dirname + staticResourcesDir));
 
 require('./lib/bootstrap.js')(app); // wires the app together
 
