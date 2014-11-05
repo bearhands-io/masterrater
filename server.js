@@ -20,7 +20,9 @@ app.set('view engine', 'ejs'); // to load .ejs files
 app.set('views', __dirname + viewsDirectory); // where .ejs files are located
 app.set('config', require('./lib/companyConfig.json'));
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(__dirname + staticResourcesDir));
 
 require('./lib/bootstrap.js')(app); // wires the app together
