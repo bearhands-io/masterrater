@@ -5,3 +5,4 @@ node_modules
 *.log
 lib/companyConfig.json
 db/*.json
+lib/config.json
