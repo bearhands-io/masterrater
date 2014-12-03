@@ -18,8 +18,13 @@ $(document).ready(function(){
   				$('#results').html(response);
 			},
 			error: function(response) {
-				console.log('error getting rates: ' + JSON.stringify(response));
-  				$('#results').text('Server exception encountered. Please try again later');
+
+				if(response.status == 401) {
+					window.location.replace("login");
+				} else {
+					console.log('error getting rates: ' + JSON.stringify(response));
+	  				$('#results').text('Server exception encountered. Please try again later');
+				}
 			},
 			complete: function(response, status) {
 				$('#submitButton').prop('disabled', false);
