@@ -30,7 +30,15 @@ $.getScript('//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/boot
   
 }); //script  
    
+// when user browses to page
+$('#content').hide();
+$('#loading').show();
 
+// then when the #content div has loaded
+$(window).bind('load', function() {
+$('#loading').hide();
+$('#content').fadeIn('slow');
+});
 
 //Time picker - requires moment.js
 $.getScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js',function(){
@@ -45,4 +53,12 @@ $.getScript('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js',fun
 
 
 $(document).ready(function() {});
+});
+
+//table sorting
+$(document).ready(function(){$.getScript('//cdn.datatables.net/1.10.1/js/jquery.dataTables.min.js',function(){
+  $.getScript('//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js',function(){
+     $('#example').dataTable();
+  });
+});
 });
