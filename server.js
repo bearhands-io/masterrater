@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 
 ////////////////////////////////////////////
 // configs
@@ -26,6 +27,9 @@ var session      = require('express-session');
 var configDB = require('./lib/config/database.js');
 
 var app = express();
+
+//MANDRILL API FOR CAMPAIGN
+process.env.MANDRILL_APIKEY = 'XNvHJJ-8dAOoFtDzGy2ScA';
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
