@@ -5,6 +5,7 @@
 Use UPS (work in progress), CTS, or custom ratings to aggregate and compare shipping rates between zip codes
 
 ================
+##### Usage
 
 Installing
 ```
@@ -58,5 +59,5 @@ rater.getRates(ratesQuery, function(calculatedRates) {
 ```
 
 ================
-###### Misc
+##### Misc Notes
 Still in the process of adding UPS APIs
