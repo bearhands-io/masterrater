@@ -2,8 +2,8 @@ var MasterRater = require('../');
 
 var mr = new MasterRater({
 	keys: {
-		cts: "",
-		google: "",
+		cts: "902",
+		google: "AIzaSyBk9GG-yHzflfNE0a8pp1qHd0U017QUCTg",
 		ups: ""
 	},
 	customRates: [

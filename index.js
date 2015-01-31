@@ -28,7 +28,6 @@ module.exports = function(config) {
 			]
 	*/
 
-	// Using mocked up values for now. Replace with configs values, eventually
 	var keys = {};
 	var customRates = [];
 
@@ -54,25 +53,17 @@ module.exports = function(config) {
 			// execute everything in parallel for magical performance gains... and then return all results once done
 			async.parallel({
 				cts: function(callback) {
-					queryCts(query, function(ctsRates) {
-						console.log('CTS produced ' + ctsRates.length + ' rates');
-						callback(null, ctsRates);
-					});
+					queryCts(query, function(ctsRates) { callback(null, ctsRates); });
 				},
 				ups: function(callback) {
-					queryUps(query, function(upsRates) {
-						console.log('UPS produced ' + upsRates.length + ' rates');
-						callback(null, upsRates);
-					});
+					queryUps(query, function(upsRates) { callback(null, upsRates); });
 				},
 				custom: function(callback) {
-					queryCustomRates(query, function(customRates) {
-						console.log('Custom produced ' + customRates.length + ' rates');
-						callback(null, customRates);
-					});
+					queryCustomRates(query, function(customRates) { callback(null, customRates); });
 				}
 			}, function(err, allRates) {
 				if(!err) {
+					console.log(JSON.stringify(allRates, undefined, 2));
 					var rates = allRates.cts.concat(allRates.ups.concat(allRates.custom));
 					result.rates = rates.sort(function(a, b){return a.price - b.price});
 					console.log('Found ' + result.rates.length + ' results');
@@ -168,6 +159,8 @@ module.exports = function(config) {
 					console.warn("Unable to use custom rates because: " + err);
 				}
 			});
+		} else {
+			console.log("No custom rates are avaiable for this fromZip: " + query.fromZip);
 		}
 
 		callback(results);
@@ -178,6 +171,8 @@ module.exports = function(config) {
 			callback('No Google api key provded in configs');
 			return;
 		}
+
+		console.log('Using Google Maps api to determine distance (miles) betwen ' + fromZip + ' and ' + toZip);
 
 		var request = {
 		    method : 'GET',
