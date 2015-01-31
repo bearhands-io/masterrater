@@ -53,7 +53,7 @@ describe('Master Rater', function(){
 	});
 
 	it('should catch invalid queries', function() {
-		getConfiguredInstance().getRate({}, function(err, results) {
+		getConfiguredInstance().getRates({}, function(err, results) {
 			assert.notEqual(err, undefined, 'No err response returned');
 		});
 	});
