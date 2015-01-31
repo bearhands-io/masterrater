@@ -1,38 +1,22 @@
 {
-	"name"         : "shipping-nodejs",
-	"version"      : "0.0.0",
-	"contributors" : [
-		{
-			"name" : "Brad Bowie"
-		},
-		{
-			"name" : "Sean Bowie"
-		}
-	],
-	"repository"   : {
-		"type" : "git",
-		"url"  : "https://github.com/brad-bowie/shipping-nodejs"
-	},
-	"dependencies" : {
-		"express"     : "latest",
-		"ejs"         : "latest",
-		"xml2js"      : "latest",
-		"body-parser" : "latest",
-		"lokijs"      : "latest",
-		"mongoose" : "~3.8.1",          
-	    "passport" : "~0.1.17",         
-	    "passport-local" : "~0.1.6",    
-	    "passport-facebook" : "~1.0.2", 
-	    "passport-twitter" : "~1.0.2",  
-	    "passport-google-oauth" : "~0.1.5",
-	    "connect-flash" : "~0.1.1",     
-	    "bcrypt-nodejs" : "latest",
-
-	    "morgan": "~1.0.0",
-	    "cookie-parser": "~1.0.0",
-	    "method-override": "~1.0.0",
-	    "express-session": "~1.0.0",
-	    "nodemailer": "latest",
-	    "nodemailer-wellknown": "latest"
-	}
+  "name": "masterrater",
+  "version": "0.0.0",
+  "description": "master of all the raters",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bearhands-io/masterrater.git"
+  },
+  "author": "bearhands.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bearhands-io/masterrater/issues"
+  },
+  "homepage": "https://github.com/bearhands-io/masterrater",
+  "dependencies": {
+    "xml2js": "^0.4.4"
+  }
 }
