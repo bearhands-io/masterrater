@@ -1,5 +1,4 @@
 # Master Rater
-### Master of all the raters
 
 Aggregate and compare shipping rates between zip codes
 
